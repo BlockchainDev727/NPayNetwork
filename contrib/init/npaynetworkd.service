@@ -1,0 +1,26 @@
+[Unit]
+Description=NPAYNETWORK's distributed currency daemon
+After=network.target
+
+[Service]
+User=npaynetwork
+Group=npaynetwork
+
+Type=forking
+PIDFile=/var/lib/npaynetworkd/npaynetworkd.pid
+
+ExecStart=/usr/bin/npaynetworkd -daemon -pid=/var/lib/npaynetworkd/npaynetworkd.pid \
+          -conf=/etc/npaynetwork/npaynetwork.conf -datadir=/var/lib/npaynetworkd
+
+ExecStop=-/usr/bin/npaynetwork-cli -conf=/etc/npaynetwork/npaynetwork.conf \
+         -datadir=/var/lib/npaynetworkd stop
+
+Restart=always
+PrivateTmp=true
+TimeoutStopSec=60s
+TimeoutStartSec=2s
+StartLimitInterval=120s
+StartLimitBurst=5
+
+[Install]
+WantedBy=multi-user.target

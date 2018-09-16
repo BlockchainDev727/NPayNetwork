@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=NPAYNETWORK
+Comment=NPAYNETWORK P2P Cryptocurrency
+Comment[fr]=NPAYNETWORK, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=NPAYNETWORK, eşten eşe kriptografik sanal para birimi
+Exec=npaynetwork-qt %u
+Terminal=false
+Type=Application
+Icon=npaynetwork128
+MimeType=x-scheme-handler/npaynetwork;
+Categories=Office;Finance;
